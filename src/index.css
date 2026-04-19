@@ -1,0 +1,9 @@
+/* Tailwind v4 — single entry directive (replaces v3's @tailwind base/components/utilities) */
+@import 'tailwindcss';
+
+/* Keep using the existing JS/TS theme config */
+@config '../tailwind.config.ts';
+
+/* Project styles */
+@import './styles/global.css';
+@import './styles/components.css';

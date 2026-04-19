@@ -1,0 +1,133 @@
+@reference 'tailwindcss';
+
+.tm-border-b {
+  @apply border-b border-muted/20;
+}
+
+/* Pills used in the topbar to display live/offline status */
+.tm-pill {
+  @apply px-3 py-1 text-xs font-medium rounded-full;
+  &.success {
+    @apply bg-success/15 text-success border-success/30;
+  }
+  &.error {
+    @apply bg-error/15 text-error border-error/30;
+  }
+}
+
+/* Badge */
+.tm-badge {
+  @apply px-2 py-1 text-xs font-medium rounded-full;
+  &.success {
+    @apply bg-success/15 text-success;
+  }
+  &.error {
+    @apply bg-error/15 text-error;
+  }
+  &.warning {
+    @apply bg-warning/15 text-warning;
+  }
+}
+
+/* Card basic styling */
+.tm-card {
+  @apply bg-panel rounded-lg flex flex-col gap-5 border border-muted/20 h-full;
+  .tm-card-header {
+    @apply flex items-center justify-between p-5 border-b border-muted/20;
+  }
+}
+
+/* Network Summary card */
+.summary-card {
+  @apply bg-panel-2 rounded-lg p-4 flex flex-col gap-2;
+  p {
+    @apply text-muted;
+  }
+  h3 {
+    @apply text-4xl;
+    &.success {
+      @apply text-success;
+    }
+    &.error {
+      @apply text-error;
+    }
+    &.warning {
+      @apply text-warning;
+    }
+  }
+}
+
+/* Spinner */
+.tm-spinner {
+  @apply inline-flex items-center gap-2 align-middle;
+
+  .tm-spinner-ring {
+    @apply inline-block rounded-full;
+    width: var(--tm-spinner-size, 1.5rem);
+    height: var(--tm-spinner-size, 1.5rem);
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      var(--tm-spinner-color, var(--primary)) 100%
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--tm-spinner-thickness, 3px)),
+      #000 calc(100% - var(--tm-spinner-thickness, 3px) + 1px)
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--tm-spinner-thickness, 3px)),
+      #000 calc(100% - var(--tm-spinner-thickness, 3px) + 1px)
+    );
+    animation: tm-spinner-rotate 0.9s linear infinite;
+  }
+
+  .tm-spinner-label {
+    @apply text-sm text-muted;
+  }
+
+  &.sm {
+    --tm-spinner-size: 1rem;
+    --tm-spinner-thickness: 2px;
+  }
+  &.md {
+    --tm-spinner-size: 1.5rem;
+    --tm-spinner-thickness: 3px;
+  }
+  &.lg {
+    --tm-spinner-size: 2.25rem;
+    --tm-spinner-thickness: 4px;
+  }
+
+  &.primary {
+    --tm-spinner-color: var(--primary);
+  }
+  &.secondary {
+    --tm-spinner-color: var(--secondary);
+  }
+  &.accent {
+    --tm-spinner-color: var(--accent);
+  }
+  &.success {
+    --tm-spinner-color: var(--success);
+  }
+  &.error {
+    --tm-spinner-color: var(--error);
+  }
+  &.warning {
+    --tm-spinner-color: var(--warning);
+  }
+}
+
+@keyframes tm-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-spinner .tm-spinner-ring {
+    animation-duration: 2.5s;
+  }
+}

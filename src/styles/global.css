@@ -1,0 +1,42 @@
+body {
+  font-family: 'Roboto', 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --bg: #ffffff;
+  --panel: #f5f7ff;
+  --text: #111;
+  --muted: #666;
+  --border: #e5e7eb;
+
+  --primary: #10b981;
+  --secondary: #6366f1;
+  --accent: #f59e0b;
+
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+}
+
+.dark {
+  --bg: #060b18;
+  --panel: #11162e;
+  --panel-2: #0a0f26;
+  --text: #f5f7ff;
+  --muted: #9aa4c4;
+  --border: rgba(120, 132, 190, 0.18);
+
+  --primary: #45d7b6; /* teal — brand / live / active */
+  --secondary: #8d96ff; /* lavender — alt accent */
+  --accent: #f8b400; /* amber — highlights */
+
+  --success: #45d7b6;
+  --error: #ff5b5b;
+  --warning: #f5b100;
+
+  --chart-1: #58d6b1;
+  --chart-2: #8d96ff;
+  --chart-3: #f8b400;
+  --chart-4: #eb77b8;
+  --chart-5: #67a8ff;
+}
